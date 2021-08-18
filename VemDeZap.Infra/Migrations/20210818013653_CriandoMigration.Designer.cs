@@ -9,8 +9,8 @@ using VemDeZap.Infra.Repositories.Base;
 namespace VemDeZap.Infra.Migrations
 {
     [DbContext(typeof(VemDeZapContext))]
-    [Migration("20210818003037_CriandoTabela")]
-    partial class CriandoTabela
+    [Migration("20210818013653_CriandoMigration")]
+    partial class CriandoMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,15 +25,17 @@ namespace VemDeZap.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("Nome")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<Guid?>("UsuarioId")
+                    b.Property<Guid?>("IdUsuario")
                         .HasColumnType("char(36)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("varchar(150) CHARACTER SET utf8mb4")
+                        .HasMaxLength(150);
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UsuarioId");
+                    b.HasIndex("IdUsuario");
 
                     b.ToTable("Campanha");
                 });
@@ -73,25 +75,25 @@ namespace VemDeZap.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<Guid?>("CampanhaId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid?>("ContatoId")
-                        .HasColumnType("char(36)");
-
                     b.Property<bool>("Enviado")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<Guid?>("GrupoId")
+                    b.Property<Guid?>("IdCampanha")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid?>("IdContato")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid?>("IdGrupo")
                         .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CampanhaId");
+                    b.HasIndex("IdCampanha");
 
-                    b.HasIndex("ContatoId");
+                    b.HasIndex("IdContato");
 
-                    b.HasIndex("GrupoId");
+                    b.HasIndex("IdGrupo");
 
                     b.ToTable("Envio");
                 });
@@ -161,7 +163,7 @@ namespace VemDeZap.Infra.Migrations
                 {
                     b.HasOne("VemDeZap.Domain.Entities.Usuario", "Usuario")
                         .WithMany()
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("IdUsuario");
                 });
 
             modelBuilder.Entity("VemDeZap.Domain.Entities.Contato", b =>
@@ -175,15 +177,15 @@ namespace VemDeZap.Infra.Migrations
                 {
                     b.HasOne("VemDeZap.Domain.Entities.Campanha", "Campanha")
                         .WithMany()
-                        .HasForeignKey("CampanhaId");
+                        .HasForeignKey("IdCampanha");
 
                     b.HasOne("VemDeZap.Domain.Entities.Contato", "Contato")
                         .WithMany()
-                        .HasForeignKey("ContatoId");
+                        .HasForeignKey("IdContato");
 
                     b.HasOne("VemDeZap.Domain.Entities.Grupo", "Grupo")
                         .WithMany()
-                        .HasForeignKey("GrupoId");
+                        .HasForeignKey("IdGrupo");
                 });
 
             modelBuilder.Entity("VemDeZap.Domain.Entities.Grupo", b =>

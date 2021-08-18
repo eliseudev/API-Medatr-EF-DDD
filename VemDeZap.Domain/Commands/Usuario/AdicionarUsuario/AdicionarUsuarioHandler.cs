@@ -21,7 +21,7 @@ namespace VemDeZap.Domain.Commands.Usuario.AdicionarUsuario
         public async Task<Response> Handle(AdicionarUsuarioRequest request, CancellationToken cancellationToken)
         {
             //Validando se o request veio preenchido
-            if(request == null)
+            if (request == null)
             {
                 AddNotification("Request", "Informe os dados do usuário");
                 return new Response(this);

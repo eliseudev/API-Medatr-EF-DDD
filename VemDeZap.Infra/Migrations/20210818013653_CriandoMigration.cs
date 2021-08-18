@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace VemDeZap.Infra.Migrations
 {
-    public partial class CriandoTabela : Migration
+    public partial class CriandoMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,15 +29,15 @@ namespace VemDeZap.Infra.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    Nome = table.Column<string>(nullable: true),
-                    UsuarioId = table.Column<Guid>(nullable: true)
+                    Nome = table.Column<string>(maxLength: 150, nullable: false),
+                    IdUsuario = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Campanha", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Campanha_Usuario_UsuarioId",
-                        column: x => x.UsuarioId,
+                        name: "FK_Campanha_Usuario_IdUsuario",
+                        column: x => x.IdUsuario,
                         principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -89,38 +89,38 @@ namespace VemDeZap.Infra.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    CampanhaId = table.Column<Guid>(nullable: true),
-                    GrupoId = table.Column<Guid>(nullable: true),
-                    ContatoId = table.Column<Guid>(nullable: true),
+                    IdCampanha = table.Column<Guid>(nullable: true),
+                    IdGrupo = table.Column<Guid>(nullable: true),
+                    IdContato = table.Column<Guid>(nullable: true),
                     Enviado = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Envio", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Envio_Campanha_CampanhaId",
-                        column: x => x.CampanhaId,
+                        name: "FK_Envio_Campanha_IdCampanha",
+                        column: x => x.IdCampanha,
                         principalTable: "Campanha",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Envio_Contato_ContatoId",
-                        column: x => x.ContatoId,
+                        name: "FK_Envio_Contato_IdContato",
+                        column: x => x.IdContato,
                         principalTable: "Contato",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Envio_Grupo_GrupoId",
-                        column: x => x.GrupoId,
+                        name: "FK_Envio_Grupo_IdGrupo",
+                        column: x => x.IdGrupo,
                         principalTable: "Grupo",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Campanha_UsuarioId",
+                name: "IX_Campanha_IdUsuario",
                 table: "Campanha",
-                column: "UsuarioId");
+                column: "IdUsuario");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Contato_IdUsuario",
@@ -128,19 +128,19 @@ namespace VemDeZap.Infra.Migrations
                 column: "IdUsuario");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Envio_CampanhaId",
+                name: "IX_Envio_IdCampanha",
                 table: "Envio",
-                column: "CampanhaId");
+                column: "IdCampanha");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Envio_ContatoId",
+                name: "IX_Envio_IdContato",
                 table: "Envio",
-                column: "ContatoId");
+                column: "IdContato");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Envio_GrupoId",
+                name: "IX_Envio_IdGrupo",
                 table: "Envio",
-                column: "GrupoId");
+                column: "IdGrupo");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Grupo_IdUsuario",

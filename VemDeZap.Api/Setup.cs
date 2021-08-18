@@ -117,7 +117,7 @@ namespace VemDeZap.Api
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "VemDeZap", Version = "v1" });
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "VemDeZap", Version = "v1" });
             });
         }
 
@@ -130,7 +130,7 @@ namespace VemDeZap.Api
                 //    .Build();
                 //options.Filters.Add(new AuthorizeFilter(policy));
             })
-            .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
     }
 }
