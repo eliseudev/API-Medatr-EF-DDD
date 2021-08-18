@@ -1,0 +1,10 @@
+C:\VemDeZap\VemDeZap\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\VemDeZap\VemDeZap\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.AssemblyInfoInputs.cache
+C:\VemDeZap\VemDeZap\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.AssemblyInfo.cs
+C:\VemDeZap\VemDeZap\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.csproj.CoreCompileInputs.cache
+C:\VemDeZap\VemDeZap\VemDeZap.Domain\bin\Debug\netcoreapp3.1\VemDeZap.Domain.deps.json
+C:\VemDeZap\VemDeZap\VemDeZap.Domain\bin\Debug\netcoreapp3.1\VemDeZap.Domain.dll
+C:\VemDeZap\VemDeZap\VemDeZap.Domain\bin\Debug\netcoreapp3.1\VemDeZap.Domain.pdb
+C:\VemDeZap\VemDeZap\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.dll
+C:\VemDeZap\VemDeZap\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.pdb
+C:\VemDeZap\VemDeZap\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.csproj.AssemblyReference.cache
