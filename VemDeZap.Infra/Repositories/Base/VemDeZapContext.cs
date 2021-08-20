@@ -32,10 +32,10 @@ namespace VemDeZap.Infra.Repositories.Base
 
             //aplicar configurações
             modelBuilder.ApplyConfiguration(new MapUsuario());
-            modelBuilder.ApplyConfiguration(new MapGrupo());
-            modelBuilder.ApplyConfiguration(new MapContato());
-            modelBuilder.ApplyConfiguration(new MapCampanha());
-            modelBuilder.ApplyConfiguration(new MapEnvio());
+            //modelBuilder.ApplyConfiguration(new MapGrupo());
+            //modelBuilder.ApplyConfiguration(new MapContato());
+            //modelBuilder.ApplyConfiguration(new MapCampanha());
+            //modelBuilder.ApplyConfiguration(new MapEnvio());
 
             base.OnModelCreating(modelBuilder);
 

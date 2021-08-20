@@ -11,11 +11,10 @@ namespace VemDeZap.Domain.Commands.Usuario.AdicionarUsuario
         private readonly IMediator _mediator;
         private readonly IRepositoryUsuario _repositoryUsuario;
 
-        public AdicionarUsuarioHandler(IRepositoryUsuario repositoryUsuario, IMediator mediator)
+        public AdicionarUsuarioHandler(IMediator mediator, IRepositoryUsuario repositoryUsuario)
         {
-            _repositoryUsuario = repositoryUsuario;
             _mediator = mediator;
-
+            _repositoryUsuario = repositoryUsuario;
         }
 
         public async Task<Response> Handle(AdicionarUsuarioRequest request, CancellationToken cancellationToken)

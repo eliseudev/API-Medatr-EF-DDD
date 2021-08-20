@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using VemDeZap.Domain.Commands;
-using VemDeZap.Infra.Transactions;
+using VemDeZap.Infra.Repositories.Transactions;
 
 namespace VemDeZap.Api.Controllers.Base
 {

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading;
 using System.Threading.Tasks;
 using VemDeZap.Domain.Commands.Usuario.AdicionarUsuario;
-using VemDeZap.Infra.Transactions;
+using VemDeZap.Infra.Repositories.Transactions;
 
 namespace VemDeZap.Api.Controllers
 {

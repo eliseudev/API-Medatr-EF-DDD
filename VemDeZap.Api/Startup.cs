@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -17,6 +18,7 @@ namespace VemDeZap.Api
             services.ConfigureAuthentication();
             services.ConfigureMVC();
             services.AddHttpContextAccessor();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -27,8 +29,6 @@ namespace VemDeZap.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
-
             //Permitindo requisiçõs usando Header, Methods e Origen (Qualquer site)
             app.UseCors(x => {
                 x.AllowAnyHeader();
@@ -36,7 +36,6 @@ namespace VemDeZap.Api
                 x.AllowAnyOrigin();
             });
 
-            //Configura para usarmos o MVC
             app.UseMvc();
 
             //Cria a documentação da Api de forma automatica
