@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VemDeZap.Domain", "VemDeZap.Domain\VemDeZap.Domain.csproj", "{FFC5A3FD-B0E5-4197-BCAB-16FD89F9F945}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VemDeZap.Api", "VemDeZap.Api\VemDeZap.Api.csproj", "{2DF289F7-454F-448D-922D-96D847C60E25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VemDeZap.Api", "VemDeZap.Api\VemDeZap.Api.csproj", "{2DF289F7-454F-448D-922D-96D847C60E25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VemDeZap.Infra", "VemDeZap.Infra\VemDeZap.Infra.csproj", "{E3F0251A-8C9B-406C-A9E2-A81B3506E358}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VemDeZap.Infra", "VemDeZap.Infra\VemDeZap.Infra.csproj", "{E3F0251A-8C9B-406C-A9E2-A81B3506E358}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

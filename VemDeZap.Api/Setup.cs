@@ -113,6 +113,7 @@ namespace VemDeZap.Api
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             services.AddTransient<IRepositoryUsuario, RepositoryUsuario>();
+            services.AddTransient<IRepositoryGrupo, RepositoryGrupo>();
         }
 
         public static void ConfigureSwagger(this IServiceCollection services)
