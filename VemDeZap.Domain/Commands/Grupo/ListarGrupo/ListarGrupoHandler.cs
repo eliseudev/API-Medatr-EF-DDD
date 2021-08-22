@@ -1,9 +1,11 @@
 ﻿using MediatR;
 using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using VemDeZap.Domain.Interfaces.Repositories;
+using VemDeZap.Domain.Resources;
 
 namespace VemDeZap.Domain.Commands.Grupo.ListarGrupo
 {
@@ -23,7 +25,7 @@ namespace VemDeZap.Domain.Commands.Grupo.ListarGrupo
             //Valida se o objeto request esta nulo
             if (request == null)
             {
-                AddNotification("Request", "Request é Obrigatório");
+                AddNotification("Resquest", MSG.OBJETO_X0_E_OBRIGATORIO.ToFormat("Grupo"));
                 return new Response(this);
             }
 

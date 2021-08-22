@@ -1,9 +1,11 @@
 ﻿using MediatR;
 using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 using VemDeZap.Domain.Interfaces.Repositories;
+using VemDeZap.Domain.Resources;
 
 namespace VemDeZap.Domain.Commands.Grupo.AdicionarGrupo
 {
@@ -25,7 +27,7 @@ namespace VemDeZap.Domain.Commands.Grupo.AdicionarGrupo
             //Validando se o request veio preenchido
             if (request == null)
             {
-                AddNotification("Request", "Informe os dados do Grupo");
+                AddNotification("Request", MSG.OBJETO_X0_E_OBRIGATORIO.ToFormat("Request"));
                 return new Response(this);
             }
 
@@ -33,7 +35,7 @@ namespace VemDeZap.Domain.Commands.Grupo.AdicionarGrupo
 
             if (usuario == null)
             {
-                AddNotification("Usuário", "Informe o Usuário");
+                AddNotification("Usuário", MSG.X0_NAO_INFORMADA.ToFormat("Usuário"));
                 return new Response(this);
             }
 

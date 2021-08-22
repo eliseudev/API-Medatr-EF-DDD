@@ -49,7 +49,7 @@ namespace VemDeZap.Domain.Commands.Grupo.AlterarGrupo
 
             if (grupo == null)
             {
-                AddNotification("Grupo", MSG.DADOS_NAO_ENCONTRADOS);
+                AddNotification("Grupo", "Grupo não encontrado");
                 return new Response(this);
             }
 

@@ -1,8 +1,10 @@
 ﻿using MediatR;
 using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
 using System.Threading;
 using System.Threading.Tasks;
 using VemDeZap.Domain.Interfaces.Repositories;
+using VemDeZap.Domain.Resources;
 
 namespace VemDeZap.Domain.Commands.Usuario.AdicionarUsuario
 {
@@ -22,13 +24,13 @@ namespace VemDeZap.Domain.Commands.Usuario.AdicionarUsuario
             //Validando se o request veio preenchido
             if (request == null)
             {
-                AddNotification("Request", "Informe os dados do usuário");
+                AddNotification("Request", MSG.OBJETO_X0_E_OBRIGATORIO.ToFormat("Usuário"));
                 return new Response(this);
             }
             //Verificar se o usuário existe
             if (_repositoryUsuario.Existe(x => x.Email == request.Email))
             {
-                AddNotification("Email", "E-Mail já cadastrado no sistema");
+                AddNotification("Email", MSG.ESTE_X0_JA_EXISTE.ToFormat("Email"));
                 return new Response(this);
             }
 

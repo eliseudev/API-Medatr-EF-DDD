@@ -1,9 +1,11 @@
 ﻿using MediatR;
 using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
 using System.Threading;
 using System.Threading.Tasks;
 using VemDeZap.Domain.Extensions;
 using VemDeZap.Domain.Interfaces.Repositories;
+using VemDeZap.Domain.Resources;
 
 namespace VemDeZap.Domain.Commands.Usuario.AutenticarUsuario
 {
@@ -23,7 +25,7 @@ namespace VemDeZap.Domain.Commands.Usuario.AutenticarUsuario
             //Valida se o objeto request esta nulo
             if (request == null)
             {
-                AddNotification("Request", "Request é obrigatório");
+                AddNotification("Request", MSG.OBJETO_X0_E_OBRIGATORIO.ToFormat("Request"));
                 return null;
             }
 
@@ -33,7 +35,7 @@ namespace VemDeZap.Domain.Commands.Usuario.AutenticarUsuario
 
             if (usuario == null)
             {
-                AddNotification("Usuario", "Usuário não encontrado.");
+                AddNotification("Usuario", MSG.DADOS_NAO_ENCONTRADOS);
                 return new AutenticarUsuarioResponse()
                 {
                     Autenticado = false

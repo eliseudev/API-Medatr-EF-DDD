@@ -1,9 +1,11 @@
 ﻿using MediatR;
 using prmToolkit.NotificationPattern;
+using prmToolkit.NotificationPattern.Extensions;
 using System.Threading;
 using System.Threading.Tasks;
 using VemDeZap.Domain.Commands.Grupo.RemoverGrupo.Notification;
 using VemDeZap.Domain.Interfaces.Repositories;
+using VemDeZap.Domain.Resources;
 
 namespace VemDeZap.Domain.Commands.Grupo.RemoverGrupo
 {
@@ -23,7 +25,7 @@ namespace VemDeZap.Domain.Commands.Grupo.RemoverGrupo
             //Valida se o objeto request esta nulo
             if (request == null)
             {
-                AddNotification("Request", ("Request é Obrigatório"));
+                AddNotification("Resquest", MSG.OBJETO_X0_E_OBRIGATORIO.ToFormat("Grupo"));
                 return new Response(this);
             }
 
@@ -31,7 +33,7 @@ namespace VemDeZap.Domain.Commands.Grupo.RemoverGrupo
 
             if (grupo == null)
             {
-                AddNotification("Request", "Grupo não encontrado");
+                AddNotification("Grupo", MSG.X0_NAO_INFORMADO.ToFormat("Grupo"));
                 return new Response(this);
             }
 
