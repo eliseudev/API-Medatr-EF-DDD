@@ -17,3 +17,4 @@ C:\API-Medatr-EF-DDD\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.Ass
 C:\API-Medatr-EF-DDD\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.csproj.CoreCompileInputs.cache
 C:\API-Medatr-EF-DDD\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.dll
 C:\API-Medatr-EF-DDD\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.pdb
+C:\API-Medatr-EF-DDD\VemDeZap.Domain\obj\Debug\netcoreapp3.1\VemDeZap.Domain.csproj.AssemblyReference.cache

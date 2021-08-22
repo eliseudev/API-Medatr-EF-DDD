@@ -105,9 +105,11 @@ namespace VemDeZap.Api.Controllers
                 var request = new RemoverGrupoResquest(id);
                 var result = await _mediator.Send(request, CancellationToken.None);
                 return await ResponseAsync(result);
+
             }
             catch (System.Exception ex)
             {
+
                 return NotFound(ex.Message);
             }
         }

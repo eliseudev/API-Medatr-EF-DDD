@@ -1,7 +1,6 @@
-﻿using prmToolkit.NotificationPattern;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using prmToolkit.NotificationPattern;
+using VemDeZap.Domain.Commands.Grupo.AlterarGrupo;
 using VemDeZap.Domain.Entities.Base;
 using VemDeZap.Domain.Enums;
 
@@ -15,9 +14,9 @@ namespace VemDeZap.Domain.Entities
             Nome = nome;
             Nicho = nicho;
 
-            if(usuario == null)
+            if (usuario == null)
             {
-                AddNotification("Usuário", "Informe o usuário");
+                AddNotification("Usuario", "Informe o usuário");
             }
 
             new AddNotifications<Grupo>(this)
@@ -25,18 +24,18 @@ namespace VemDeZap.Domain.Entities
                 .IfEnumInvalid(x => x.Nicho);
         }
 
-        protected Grupo()
-        {
-        }
-
-        public Usuario Usuario { get; set; }
-        public string Nome { get; set; }
-        public EnumNicho Nicho { get; set; }
-
         public void AlterarGrupo(string nome, EnumNicho nicho)
         {
             Nome = nome;
             Nicho = nicho;
         }
+
+        protected Grupo(){}
+
+        public Usuario Usuario { get; set; }
+        public string Nome { get; set; }
+        public EnumNicho Nicho { get; set; }
+
+
     }
 }

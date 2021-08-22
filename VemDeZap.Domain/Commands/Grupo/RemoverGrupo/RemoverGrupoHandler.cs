@@ -37,7 +37,7 @@ namespace VemDeZap.Domain.Commands.Grupo.RemoverGrupo
 
             _repositoryGrupo.Remover(grupo);
 
-            var result = new { grupo.Id };
+            var result = new { Id = grupo.Id };
 
             //Cria objeto de resposta
             var response = new Response(this, result);
